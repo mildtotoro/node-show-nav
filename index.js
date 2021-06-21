@@ -6,12 +6,8 @@ console.log("Fund Name: ", fundName);
 const options = {
   protocol: "https:",
   hostname: "codequiz.azurewebsites.net",
-  // port: <<HOST PORT>>,
-  method: "GET", // RESQUEST METHOD
-  //   port: 8080,
+  method: "GET",
   headers: {
-    // 'Content-Type': 'application/json',
-    // 'Content-Length': Buffer.byteLength(postData)
     Cookie: "hasCookie = true",
   },
 };
@@ -19,11 +15,8 @@ const options = {
 const req = https.request(options, (response) => {
   let data = "";
 
-  //   console.log(response);
   response.on("data", (chunk) => {
-    // data response
     data += chunk;
-    // console.log("chunk", chunk);
   });
 
   response.on("end", () => {
